@@ -1,9 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaDiceD20, FaHandHoldingHeart, FaBriefcase } from "react-icons/fa";
 
-import { useContext } from "react";
-
+import { useContext, useEffect } from "react";
 import AppContext from "../../AppContext";
 
 const Blob = ({ blob }) => {
@@ -65,34 +64,41 @@ const Blob = ({ blob }) => {
   if (blob.id === 1) var variants = variantsBlob1;
   if (blob.id === 2) var variants = variantsBlob2;
 
+  useEffect(() => {});
+
+  const { handleBlobSubmit } = useContext(AppContext);
+  const { handleBackdropClick } = useContext(AppContext);
+
   return (
-    <motion.div
-      whileHover={{ scale: 1.5 }}
-      transition={{
-        duration: 0.5,
-        scale: {
-          type: "spring",
-          damping: 8,
-          stiffness: 100,
-          restDelta: 0.001,
-        },
-      }}
-      variants={variants}
-      initial="initial"
-      animate="movement"
-      className="Blobs"
-      style={{ backgroundColor: blob.colour }}
-      id={"blob" + blob.id}
-      key={"blob" + blob.id}
-    >
-      {blob.id === 0 && <FaDiceD20 />}
-      {blob.id === 1 && <FaHandHoldingHeart />}
-      {blob.id === 2 && <FaBriefcase />}
+    <AnimatePresence>
+      <motion.div
+        whileHover={{ scale: 1.5 }}
+        variants={variants}
+        initial="initial"
+        animate="movement"
+        className="Blobs"
+        style={{ backgroundColor: blob.colour }}
+        id={"blob" + blob.id}
+        key={"blob" + blob.id}
+        onClick={() => {
+          handleBlobSubmit(blob.id);
+        }}
+      >
+        {blob.id === 0 && <FaDiceD20 />}
+        {blob.id === 1 && <FaHandHoldingHeart />}
+        {blob.id === 2 && <FaBriefcase />}
 
-      <h4>{blob.title}</h4>
+        <h3>{blob.title}</h3>
+        {/* <h4>{blob.subtitle}</h4> */}
 
-      {/* <motion.svg></motion.svg> */}
-    </motion.div>
+        {/* <motion.svg></motion.svg> */}
+      </motion.div>
+
+      <motion.div
+        className="backdrop"
+        onClick={handleBackdropClick}
+      ></motion.div>
+    </AnimatePresence>
   );
 };
 

@@ -1,19 +1,203 @@
 // Imports
 
 // Colours and Fonts
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+Toto:wght@400;500;600;700&display=swap");
+
+$inter: "Inter", sans-serif;
+$noto: "Noto Serif Toto", serif;
+
+$border: 1px solid red;
 
 // Overall
 html {
   margin: 0;
   padding: 0;
+  body {
+    margin: 0;
+  }
+  overflow-x: hidden;
 }
 
-.App {
+.App-Container {
+  display: flex;
+  flex-direction: column;
+
+  padding: 3rem 5rem;
+  // background: linear-gradient(
+  //   -0deg,
+  //   #fbd9fc,
+  //   #f4eefc,
+  //   #c8d0f9,
+  //   #c5f0fc,
+  //   #e8e8d9,
+  //   #f6cbd9,
+  //   #f8cfc9,
+  //   #f5f2cc,
+  //   #d3f3ee
+  // );
+  background-size: 200% 200%;
+  animation: gradient 10s ease infinite;
+  // height: 100vh;
+
+  background-image: radial-gradient(
+      at 44% 0%,
+      rgba(255, 184, 122, 0.4) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 80% 0%, rgba(31, 221, 255, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgba(255, 133, 173, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(255, 181, 138, 0) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, rgba(107, 102, 255, 0) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgba(255, 133, 167, 0.25) 0px, transparent 50%);
 }
 
 // Header
 .Header {
-  .header-logo {
-    width: 15%;
+  // border: $border;
+
+  .Header-Logo {
+    height: 100px;
+    align-items: center;
   }
+}
+
+// Main
+.Main-Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: clamp(400px, 70vh, 90vh);
+}
+
+.Main {
+  // height: clamp(400px, 70vh, 90vh);
+  align-items: center;
+
+  width: 60%;
+
+  p {
+    font-family: $inter;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    a:visited {
+    }
+  }
+  h1 {
+    font-family: $inter;
+  }
+}
+
+// Blobs
+.Blobs-Showcase {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+  }
+
+  .Blobs {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    margin: 0 25px;
+    width: 220px;
+    border-radius: 25px;
+    font-family: $inter;
+    cursor: pointer;
+
+    @media only screen and (max-width: 700px) {
+      margin-top: 25px;
+    }
+
+    svg {
+      font-size: 3rem;
+    }
+    h4 {
+      margin: 0;
+      padding-top: 15px;
+    }
+  }
+
+  .Blobs:hover {
+    z-index: 999;
+  }
+
+  #blob0 {
+    position: absolute;
+    top: 25%;
+    right: 20%;
+
+    @media only screen and (max-width: 1000px) {
+      position: relative;
+      display: flex;
+
+      top: 0;
+      right: 0;
+    }
+  }
+  #blob1 {
+    position: absolute;
+    top: 45%;
+    right: 5%;
+
+    @media only screen and (max-width: 1000px) {
+      position: relative;
+      display: flex;
+
+      top: 0;
+      right: 0;
+    }
+  }
+  #blob2 {
+    position: absolute;
+    top: 65%;
+    right: 20%;
+
+    @media only screen and (max-width: 1000px) {
+      position: relative;
+      display: flex;
+
+      top: 0;
+      right: 0;
+    }
+    @media only screen and (max-width: 700px) {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+// Keyframes
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.testBox {
+  width: 150px;
+  height: 150px;
+
+  background-color: hotpink;
+  border-radius: 50%;
+
+  position: absolute;
+  right: 30%;
 }

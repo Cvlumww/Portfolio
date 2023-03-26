@@ -1,12 +1,13 @@
 import { useContext, useEffect } from "react";
 import AppContext from "../../AppContext";
 
-import { FaDiceD20, FaHandHoldingHeart, FaBriefcase } from "react-icons/fa";
-
 import { motion, AnimatePresence } from "framer-motion";
+
+import { FaDiceD20, FaHandHoldingHeart, FaBriefcase } from "react-icons/fa";
 
 const Blob = ({ blob }) => {
   const { handleBlobSubmit } = useContext(AppContext);
+
   return (
     <motion.div
       layoutId={`blob-${blob.id}`}

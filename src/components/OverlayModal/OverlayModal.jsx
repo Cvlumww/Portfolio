@@ -5,25 +5,20 @@ import { motion, AnimatePresence } from "framer-motion";
 // import { FaDiceD20, FaHandHoldingHeart, FaBriefcase } from "react-icons/fa";
 
 const OverlayModal = () => {
-  const { showModal } = useContext(AppContext);
   const { handleBackdropClick } = useContext(AppContext);
   const { selectedID } = useContext(AppContext);
   const { blobs } = useContext(AppContext);
 
-  // const blobData = blobs[selectedID];
   const blobData = blobs[selectedID];
 
-  if (!selectedID) return <></>;
+  if (selectedID === null) return <></>;
 
-  console.log(blobData.title);
-
-  if (selectedID === 0) console.log(blobData.title);
-  if (selectedID === 1) console.log(blobData.title);
-  if (selectedID === 2) console.log(blobData.title);
+  console.log("blobs:", blobs);
+  // console.log(blobData.title);
 
   return (
-    <>
-      {showModal && (
+    <div className="modal-container">
+      {selectedID !== null && (
         <div onClick={handleBackdropClick} className="backdrop"></div>
       )}
 
@@ -47,7 +42,7 @@ const OverlayModal = () => {
       </motion.div>
 
       {/*  */}
-    </>
+    </div>
   );
 };
 

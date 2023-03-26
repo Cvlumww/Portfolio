@@ -30,24 +30,19 @@ export function AppProvider({ children }) {
       colour: "#fbd9fc",
       subtitle: "A way to show off the business idea to early clients",
       paraText1:
-        "I was approached to build a mock website that helped the client convey the idea they had of their business. This is great as ",
+        "I was approached to build a mock website that helped the client convey the idea they had of their business to potentual investors. They were very happy with the product delivered and even showed off the prototype web app to GearedApp who were developing the final version of the SaaS business as a launching point.",
       paraText2: "",
     },
   ]);
 
-  const [selectedID, setSelectedID] = useState(false);
-
-  const [showModal, setShowModal] = useState(false);
+  const [selectedID, setSelectedID] = useState(null);
 
   const handleBlobSubmit = (id) => {
-    setShowModal(true);
     setSelectedID(id);
-    // if (id === null) console.log(selectedID);
     console.log(id);
   };
 
   const handleBackdropClick = () => {
-    setShowModal(false);
     setSelectedID(null);
   };
 
@@ -57,7 +52,6 @@ export function AppProvider({ children }) {
         blobs,
         handleBlobSubmit,
         handleBackdropClick,
-        showModal,
         selectedID,
       }}
     >

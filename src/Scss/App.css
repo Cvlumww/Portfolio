@@ -130,10 +130,6 @@ html body {
   padding-top: 15px;
 }
 
-.Blobs-Showcase .Blobs:hover {
-  z-index: 999;
-}
-
 .Blobs-Showcase #blob0 {
   position: absolute;
   top: 25%;
@@ -189,6 +185,49 @@ html body {
   .Blobs-Showcase #blob2 {
     margin-bottom: 50px;
   }
+}
+
+.backdrop {
+  position: absolute;
+  width: 100vw;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  right: 0;
+  overflow-y: hidden;
+}
+
+.OverlayModal {
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.BigBlobs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 25px;
+  margin: 0 25px;
+  border-radius: 25px;
+  font-family: "Inter", sans-serif;
+  z-index: 999;
+}
+
+.BigBlobs svg {
+  font-size: 3rem;
+}
+
+.BigBlobs h4,
+.BigBlobs h3 {
+  margin: 0;
+  padding-top: 15px;
 }
 
 @-webkit-keyframes gradient {

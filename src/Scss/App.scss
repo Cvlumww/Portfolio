@@ -82,8 +82,6 @@ html {
       text-decoration: none;
       color: black;
     }
-    a:visited {
-    }
   }
   h1 {
     font-family: $inter;
@@ -132,7 +130,7 @@ html {
   }
 
   .Blobs:hover {
-    z-index: 999;
+    // z-index: 999;
   }
 
   #blob0 {
@@ -177,6 +175,54 @@ html {
       margin-bottom: 50px;
     }
   }
+}
+
+// OverlayModal
+.backdrop {
+  position: absolute;
+  width: 100vw;
+  height: 120%;
+  background-color: rgba($color: #000000, $alpha: 0.8);
+
+  top: 0;
+  right: 0;
+
+  overflow-y: hidden;
+}
+
+.OverlayModal {
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.BigBlobs {
+  position: absolute;
+  // width: 50vw;
+  // height: 50vh;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 25px;
+  margin: 0 25px;
+
+  border-radius: 25px;
+  font-family: $inter;
+
+  svg {
+    font-size: 3rem;
+  }
+  h4,
+  h3 {
+    margin: 0;
+    padding-top: 15px;
+  }
+  z-index: 999;
 }
 
 // Keyframes

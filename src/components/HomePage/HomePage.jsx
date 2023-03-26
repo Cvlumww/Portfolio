@@ -1,11 +1,11 @@
 import { useContext, useEffect } from "react";
-import { motion } from "framer-motion";
 
 import AppContext from "../../AppContext";
-import Blob from "../Blobs/Blob";
+import List from "../List/List";
+import Modal from "../OverlayModal/OverlayModal";
 
 const HomePage = () => {
-  const { blobs } = useContext(AppContext);
+  const { selectedID } = useContext(AppContext);
 
   return (
     <div className="Main-Container">
@@ -22,11 +22,9 @@ const HomePage = () => {
           get in touch
         </p>
       </div>
-
       <div className="Blobs-Showcase">
-        {blobs.map((blob) => {
-          return <Blob blob={blob} key={"blob" + blob.id} />;
-        })}
+        <List />
+        <Modal id={selectedID} />
       </div>
     </div>
   );

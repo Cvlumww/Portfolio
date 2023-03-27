@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-
+import { motion } from "framer-motion";
 import AppContext from "../../AppContext";
 import List from "../List/List";
 import Modal from "../OverlayModal/OverlayModal";
@@ -17,10 +17,12 @@ const HomePage = () => {
       opacity: 1,
       transition: {
         duration: 1,
-        type: "spring",
+        type: "tween",
         damping: 25,
         stiffness: 500,
         delay: 1,
+
+        delayChildren: 1,
       },
     },
   };
@@ -28,17 +30,25 @@ const HomePage = () => {
   return (
     <div className="Main-Container">
       <div className="Main">
-        <p>
+        <motion.p
+          variants={subtitleVariants}
+          initial="initial"
+          animate="movement"
+        >
           <a href="https://github.com/Cvlumww/" target="_blank">
             Calum F Wardrop
           </a>{" "}
           - Software Engineer
-        </p>
+        </motion.p>
         <h1>I create technical solutions to real world problems</h1>
-        <p>
+        <motion.p
+          variants={subtitleVariants}
+          initial="initial"
+          animate="movement"
+        >
           Email <a href="mailto:contact@calum.work">contact@calum.work</a> to
           get in touch
-        </p>
+        </motion.p>
       </div>
       <div className="Blobs-Showcase">
         <List />

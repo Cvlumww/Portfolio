@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import AppContext from "../../AppContext";
 
 import { motion, AnimatePresence } from "framer-motion";
-// import { FaDiceD20, FaHandHoldingHeart, FaBriefcase } from "react-icons/fa";
+import { FaDiceD20, FaHandHoldingHeart, FaBriefcase } from "react-icons/fa";
 
 const OverlayModal = () => {
   const { handleBackdropClick } = useContext(AppContext);
@@ -19,22 +19,31 @@ const OverlayModal = () => {
   return (
     <div className="modal-container">
       {selectedID !== null && (
-        <div onClick={handleBackdropClick} className="backdrop"></div>
+        <motion.div
+          onClick={handleBackdropClick}
+          className="backdrop"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        ></motion.div>
       )}
 
       <motion.div
         layoutId={`blob-${blobData.id}`}
         initial={{
           opacity: 0,
-          y: -50,
         }}
         animate={{
           opacity: 1,
-          y: 0,
         }}
+        transition={{ duration: 0.5 }}
         style={{ backgroundColor: blobData.colour }}
         className="BigBlobs"
       >
+        {blobData.id === 0 && <FaDiceD20 />}
+        {blobData.id === 1 && <FaHandHoldingHeart />}
+        {blobData.id === 2 && <FaBriefcase />}
+
         <h3>{blobData.title}</h3>
         <h4>{blobData.subtitle}</h4>
         <p>{blobData.paraText1}</p>

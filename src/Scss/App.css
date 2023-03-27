@@ -31,6 +31,12 @@ html body {
           align-items: center;
 }
 
+@media only screen and (max-width: 700px) {
+  .Header {
+    margin-bottom: 200px;
+  }
+}
+
 .Main-Container {
   display: -webkit-box;
   display: -ms-flexbox;

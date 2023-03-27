@@ -23,18 +23,7 @@ html {
   flex-direction: column;
 
   padding: 3rem 5rem;
-  // background: linear-gradient(
-  //   -0deg,
-  //   #fbd9fc,
-  //   #f4eefc,
-  //   #c8d0f9,
-  //   #c5f0fc,
-  //   #e8e8d9,
-  //   #f6cbd9,
-  //   #f8cfc9,
-  //   #f5f2cc,
-  //   #d3f3ee
-  // );
+
   background-size: 200% 200%;
   animation: gradient 10s ease infinite;
   // height: 100vh;
@@ -56,6 +45,10 @@ html {
   .Header-Logo {
     height: 100px;
     align-items: center;
+  }
+
+  @media only screen and (max-width: 700px) {
+    margin-bottom: 200px;
   }
 }
 

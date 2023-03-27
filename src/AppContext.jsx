@@ -12,7 +12,8 @@ export function AppProvider({ children }) {
       paraText1:
         "As an active DnD player I noticed that my friend who DMs was using a notepad file on his computer to keep track of all of the characters. I knew I could develop something to help him.",
       paraText2:
-        "This web app helps track initiative, heal and damage NPC's, includes death saving throws for NPC's whos HP is lower than 0 and much more! I developed this web app to be the ultimate GM's best friend, to take care of all of the minute details involved in tracking DnD combat and let them focus on the story and having fun",
+        "This web app helps track initiative, heal and damage NPC's, includes death saving throws for NPC's whos HP is lower than 0 and much more! I developed this web app to be the ultimate GM's best friend, to take care of all of the minute details involved in tracking DnD combat and let them focus on the story and having fun.",
+      link: "https://combat.calum.cool",
     },
     {
       id: 1,
@@ -23,6 +24,7 @@ export function AppProvider({ children }) {
         "This website combines the usage of two different React libraries to create this mood graph generator. The idea behind the website is to help people in therapy or out of therepy visualise how they feel.",
       paraText2:
         "The idea came to me while I was speaking to a close friend who was in therapy at the time and said that each week they were asked to write down on a scale of 1 to 10 how they felt over the week but when the numbers were written down, they were just numbers. There was no connection to moods or emotions. Thats why I decided to try to help. With this web app users can visualise their highs and lows and pass the generated images to the medical professionals to better explain how they have felt and how the events of the week affected them.",
+      link: "https://mood.calum.cool",
     },
     {
       id: 2,
@@ -30,8 +32,10 @@ export function AppProvider({ children }) {
       colour: "#fbd9fc",
       subtitle: "A way to show off the business idea to early clients",
       paraText1:
-        "I was approached to build a mock website that helped the client convey the idea they had of their business to potentual investors. They were very happy with the product delivered and even showed off the prototype web app to GearedApp who were developing the final version of the SaaS business as a launching point.",
-      paraText2: "",
+        "I was approached to build a prototype website that helped the client convey the idea they had of their SaaS business to potentual investors and pre-launch clients.",
+      paraText2:
+        "They were very happy with the product delivered and even showed off the prototype web app to GearedApp who are developing the final version of the SaaS business as a launching point.",
+      link: "https://calum.cool",
     },
   ]);
 

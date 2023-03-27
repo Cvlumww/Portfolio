@@ -48,6 +48,17 @@ const OverlayModal = () => {
         <h4>{blobData.subtitle}</h4>
         <p>{blobData.paraText1}</p>
         <p>{blobData.paraText2}</p>
+
+        {blobData.id !== 2 && (
+          <a href={blobData.link} target="_blank">
+            <button
+              className="modalButton"
+              style={{ backgroundColor: blobData.colour }}
+            >
+              Click here to view
+            </button>
+          </a>
+        )}
       </motion.div>
 
       {/*  */}

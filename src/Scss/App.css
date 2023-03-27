@@ -24,6 +24,12 @@ html body {
   background-image: radial-gradient(at 44% 0%, rgba(255, 184, 122, 0.4) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(31, 221, 255, 0.1) 0px, transparent 50%), radial-gradient(at 80% 50%, rgba(255, 133, 173, 0.1) 0px, transparent 50%), radial-gradient(at 0% 100%, rgba(255, 181, 138, 0) 0px, transparent 50%), radial-gradient(at 80% 100%, rgba(107, 102, 255, 0) 0px, transparent 50%), radial-gradient(at 0% 0%, rgba(255, 133, 167, 0.25) 0px, transparent 50%);
 }
 
+@media only screen and (max-width: 700px) {
+  .App-Container {
+    padding: 3rem 1rem;
+  }
+}
+
 .Header .Header-Logo {
   height: 100px;
   -webkit-box-align: center;
@@ -69,6 +75,12 @@ html body {
 
 .Main h1 {
   font-family: "Inter", sans-serif;
+}
+
+@media only screen and (max-width: 700px) {
+  .Main {
+    width: 80%;
+  }
 }
 
 .Blobs-Showcase {
@@ -203,6 +215,12 @@ html body {
   overflow-y: hidden;
 }
 
+@media only screen and (max-width: 700px) {
+  .backdrop {
+    height: clamp(200%, 1000px, 90vh);
+  }
+}
+
 .modal-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -257,7 +275,19 @@ html body {
     width: 80vw;
     position: absolute;
     top: 20%;
+    left: 3%;
+    margin: 0;
   }
+}
+
+.modalButton {
+  width: 100%;
+  margin-top: 25px;
+  padding: 15px 0;
+  border: 3px solid white;
+  font-family: "Inter", sans-serif;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 @-webkit-keyframes gradient {
@@ -282,14 +312,5 @@ html body {
   100% {
     background-position: 0% 50%;
   }
-}
-
-.testBox {
-  width: 150px;
-  height: 150px;
-  background-color: hotpink;
-  border-radius: 50%;
-  position: absolute;
-  right: 30%;
 }
 /*# sourceMappingURL=App.css.map */

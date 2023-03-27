@@ -7,22 +7,56 @@ import Modal from "../OverlayModal/OverlayModal";
 const HomePage = () => {
   const { selectedID } = useContext(AppContext);
 
-  const subtitleVariants = {
+  const subtitleVariant1 = {
     initial: {
       x: "-20%",
       opacity: 0,
     },
     movement: {
-      x: "0",
+      x: "10%",
       opacity: 1,
       transition: {
-        duration: 1,
+        duration: 1.5,
+        type: "tween",
+        damping: 25,
+        stiffness: 500,
+        delay: 0.5,
+      },
+    },
+  };
+
+  const titleVariants = {
+    initial: {
+      x: "20%",
+      opacity: 0,
+    },
+    movement: {
+      x: "10%",
+      opacity: 1,
+      transition: {
+        duration: 1.5,
         type: "tween",
         damping: 25,
         stiffness: 500,
         delay: 1,
+      },
+    },
+  };
 
-        delayChildren: 1,
+  const subtitleVariant2 = {
+    initial: {
+      x: "-20%",
+      opacity: 0,
+    },
+    movement: {
+      x: "10%",
+      opacity: 1,
+      transition: {
+        duration: 1.5,
+        type: "tween",
+        damping: 25,
+        stiffness: 500,
+        delay: 1.5,
       },
     },
   };
@@ -31,7 +65,7 @@ const HomePage = () => {
     <div className="Main-Container">
       <div className="Main">
         <motion.p
-          variants={subtitleVariants}
+          variants={subtitleVariant1}
           initial="initial"
           animate="movement"
         >
@@ -40,9 +74,15 @@ const HomePage = () => {
           </a>{" "}
           - Software Engineer
         </motion.p>
-        <h1>I create technical solutions to real world problems</h1>
+        <motion.h1
+          variants={titleVariants}
+          initial="initial"
+          animate="movement"
+        >
+          I create technical solutions to real world problems
+        </motion.h1>
         <motion.p
-          variants={subtitleVariants}
+          variants={subtitleVariant2}
           initial="initial"
           animate="movement"
         >
